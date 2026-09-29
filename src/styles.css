@@ -133,3 +133,4 @@
 .leaflet-container { background: var(--background); font-family: var(--font-sans); }
 @keyframes alertpop { 0% { opacity: 0; transform: translate(-50%, -10px); } 100% { opacity: 1; transform: translate(-50%, 0); } }
 .alert-pop { animation: alertpop .3s ease-out; }
+.dark-tiles { filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9) saturate(0.4); }

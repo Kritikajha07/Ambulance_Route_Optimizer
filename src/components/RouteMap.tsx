@@ -34,8 +34,8 @@ export default function RouteMap(p: MapProps) {
       const Lf = (mod as unknown as { default: typeof LType }).default ?? (mod as unknown as typeof LType);
       L.current = Lf;
       const m = Lf.map(el.current, { zoomControl: true }).setView([23.035, 72.565], 12);
-      Lf.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-        attribution: "&copy; OpenStreetMap &copy; CARTO",
+      Lf.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors", className: "dark-tiles",
         maxZoom: 18,
       }).addTo(m);
       layer.current = Lf.layerGroup().addTo(m);

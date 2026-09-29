@@ -39,7 +39,7 @@ function randomTraffic(level: Intensity, edges: GEdge[]) {
 }
 
 function App() {
-  const [amb, setAmb] = useState({ lat: 23.052, lng: 72.53 });
+  const [amb, setAmb] = useState({ lat: 23.018, lng: 72.49 });
   const [target, setTarget] = useState<number | "auto">("auto");
   const [intensity, setIntensity] = useState<Intensity>("light");
   const [traffic, setTraffic] = useState<Record<number, TrafficLevel>>({});
