@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Shortest-path algorithms are hand-written in src/lib/algorithms.ts (no routing libraries) — it is a DAA course project.
+- Leaflet is loaded client-only via dynamic import in RouteMap — it touches window and breaks SSR.
