@@ -70,14 +70,11 @@ export default function RouteMap(p: MapProps) {
     };
     const pt = (i: number): [number, number] => [nodes[i].lat, nodes[i].lng];
     const routeSet = new Set(route);
-    alts.forEach((a) =>
-      Lf.polyline(a.flatMap((e) => [pt(edges[e].u), pt(edges[e].v)]).length ? [] : [], {}),
-    );
     for (const e of edges) {
       const t = traffic[e.id] ?? "free";
       const isB = blocked.has(e.id);
       const color = isB ? col.blocked : t === "free" ? col.road : col[t];
-      const line = Lf.polyline([pt(e.u), pt(e.v)], {
+      Lf.polyline([pt(e.u), pt(e.v)], {
         color, weight: isB ? 5 : e.type === "highway" ? 5 : e.type === "access" ? 2 : 3.5,
         opacity: e.type === "access" ? 0.5 : 0.85, dashArray: isB ? "6 6" : undefined,
       }).addTo(lg);
@@ -85,7 +82,6 @@ export default function RouteMap(p: MapProps) {
         .addTo(lg)
         .bindTooltip(`${e.road} · ${e.km.toFixed(1)} km · ${isB ? "BLOCKED" : t}<br/><i>click to ${isB ? "unblock" : "block"}</i>`, { sticky: true })
         .on("click", () => cb.current.onEdgeClick(e.id));
-      void line;
     }
     alts.forEach((a) => {
       for (const id of a) {
