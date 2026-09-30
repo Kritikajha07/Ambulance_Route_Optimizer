@@ -226,8 +226,7 @@ function App() {
 
           <div className="rounded-lg border border-border bg-card">
             <div className="flex flex-wrap gap-1 border-b border-border p-2">
-              {([["nav", "Turn-by-turn & alternatives"], ["rank", "Nearest hospitals"], ["bench", "Algorithm benchmark"], ["viva", "DAA viva guide"]] as const).map(([k, l]) => (
-                <button key={k} className={`btn text-sm ${tab === k ? "btn-active" : ""}`} onClick={() => setTab(k)}>{l}</button>
+            {([["nav", "Turn-by-turn & alternatives"], ["rank", "Nearest hospitals"], ["bench", "Algorithm benchmark"]] as const).map(([k, l]) => (                <button key={k} className={`btn text-sm ${tab === k ? "btn-active" : ""}`} onClick={() => setTab(k)}>{l}</button>
               ))}
             </div>
             <div className="p-4">
