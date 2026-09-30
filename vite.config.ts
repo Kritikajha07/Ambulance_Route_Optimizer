@@ -9,7 +9,11 @@ export default defineConfig({
     tsconfigPaths: true,
   },
   plugins: [
-    tanstackStart(),
+    tanstackStart({
+  spa: {
+    enabled: true,
+  },
+  }),
     tailwindcss(),
     react(),
   ],
